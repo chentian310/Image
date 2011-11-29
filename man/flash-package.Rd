@@ -3,12 +3,10 @@
 \alias{flash}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Preprocess pictures and then do inference to detect flash area
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+Haven't done yet. Wait for updated
 }
 \details{
 \tabular{ll}{

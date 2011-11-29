@@ -1,25 +1,25 @@
+%\ A very bad documentation .....
 \name{WriteData}
 \alias{WriteData}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Write Data to a Directory
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+The data (3-d array) \texttt{mydata} are written to directory \texttt{DIR} in the form of .txt files (each one consists of  a matrix).The 3rd dimetion indicates the order of .txt files.
 }
 \usage{
 WriteData(mydata, DIR, skip.first = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mydata}{
-%%     ~~Describe \code{mydata} here~~
-}
+  \item{mydata} { the 3-D array to be written out\code{mydata}
+
   \item{DIR}{
-%%     ~~Describe \code{DIR} here~~
+          The target directory \code{DIR} 
 }
   \item{skip.first}{
-%%     ~~Describe \code{skip.first} here~~
+       if \texttt{TRUE} the 3-D array \texttt{mydata} \code{skip.first} here~~
 }
 }
 \details{
@@ -45,7 +45,7 @@ WriteData(mydata, DIR, skip.first = FALSE)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+       ReadData()   See Also as \code{\link{help}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

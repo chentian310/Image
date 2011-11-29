@@ -2,9 +2,11 @@
 \alias{ReadData}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+    Text Files Input
 }
 \description{
+Reads in all text files in a directory and creates a 3-D array from it, with the 3rd dimension corresponding the index.
+
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -13,9 +15,11 @@ ReadData(DIR, skip.first = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{DIR}{
+     the directory containing the target text files.
 %%     ~~Describe \code{DIR} here~~
 }
   \item{skip.first}{
+   logical: if \code{TRUE} then the first text file in the directory would not skipped and not inputed. 
 %%     ~~Describe \code{skip.first} here~~
 }
 }
