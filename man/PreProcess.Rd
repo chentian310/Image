@@ -2,10 +2,10 @@
 \alias{PreProcess}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+  Preparation Before Analysis 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+   Perform background filtration, spacial smoothing on a 3-D array
 }
 \usage{
 PreProcess(mydata, default.val = 0, ...)
@@ -13,23 +13,22 @@ PreProcess(mydata, default.val = 0, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mydata}{
-%%     ~~Describe \code{mydata} here~~
+       The 3D array that is to be processed.
 }
   \item{default.val}{
-%%     ~~Describe \code{default.val} here~~
+       NA consider get rid of this
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+       Other ... consider get rid of this
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+   \code{mydata} is a 3D array with first 2 dimensions indicating the intensity for each pixel of a picture and the 3rd dimension indicating the time captured the picture. To seperate the back-ground and front-groud, k-means method is applied to do the cluster analysis and then normalize the intensity by doing temporal quantile regression on each pixel and finally use \code{image.smooth} to smooth each picture.  
 }
 \value{
 %%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+  \item{preproc}{The new \code{mydata} after pre-process}
+  \item{mask}{A logic matrix indicating the background or not. \code{TRUE} denotes background.}
 %% ...
 }
 \references{
@@ -102,5 +101,5 @@ function(mydata,default.val=0,...){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+%\keyword{ ~kwd1 }
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

@@ -6,48 +6,49 @@
 Write Data to a Directory
 }
 \description{
-The data (3-d array) \texttt{mydata} are written to directory \texttt{DIR} in the form of .txt files (each one consists of  a matrix).The 3rd dimetion indicates the order of .txt files.
+The data (3-d array) \code{mydata} are written to directory \code{DIR} in the form of .txt files (each one consists of  a matrix).The 3rd dimetion indicates the order of .txt files.
 }
 \usage{
 WriteData(mydata, DIR, skip.first = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mydata} { the 3-D array to be written out\code{mydata}
+  \item{mydata}{the 3-D array to be written out
+}
 
   \item{DIR}{
-          The target directory \code{DIR} 
+          The target directory \code{DIR} to write the data in 
 }
   \item{skip.first}{
-       if \texttt{TRUE} the 3-D array \texttt{mydata} \code{skip.first} here~~
+       logical: if \code{TRUE} then 3-D array \code{mydata} would not write the first matrix into the directory
 }
 }
-\details{
+\details{ NA
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{ NA
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{ NA
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{ NA
 %%  ~~who you are~~
 }
-\note{
+\note{ NA
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-       ReadData()   See Also as \code{\link{help}}
+      See Also as \code{\link{ReadData}}
 }
-\examples{
+\examples{ NA
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
@@ -81,5 +82,5 @@ function(mydata,DIR,skip.first=FALSE){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+%\keyword{ ~kwd1 }
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
