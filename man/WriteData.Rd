@@ -53,34 +53,7 @@ WriteData(mydata, DIR, skip.first = FALSE)
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function(mydata,DIR,skip.first=FALSE){
-
-  Time<-1:dim(mydata)[3]
-
-  if (skip.first){
-
-   for(tt in Time){
-
-      fname=paste(DIR,"/",sprintf("\%04d",tt),".txt",sep="")    
-
-      write.table(mydata[,,tt],fname,row.names=FALSE,col.names=FALSE)
-
-    } 
-
-   }else{ for(tt in Time){
-
-      fname=paste(DIR,"/",sprintf("\%04d",tt-1),".txt",sep="")    
-
-      write.table(mydata[,,tt],fname,row.names=FALSE,col.names=FALSE)
-
-   }
-
- }
-
-  }
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-%\keyword{ ~kwd1 }
+\keyword{utilities}
 %\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
