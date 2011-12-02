@@ -25,7 +25,7 @@ fastperm3.R <- function(X,t.min,t.max){
 
 ## fastperm3.C version
 fastperm3.C <- function(X,t.mim,t.max){
-   N<-length(X);B<-B/3;ind<-seq(0,N-1,3)
+   N<-length(X);B<-N/3;ind<-seq(0,N-1,3)
    XX <- matrix(X,ncol=3,byrow=T)
    Xtilde <- matrix(0,nrow=N,ncol=3)
    for (l in 1:3){
@@ -34,7 +34,7 @@ fastperm3.C <- function(X,t.mim,t.max){
    Xt0 <- Xtilde[,1];Xt1 <- Xtilde[,2]; Xt2 <- Xtilde[,3]
    ## implemented in C
     XtildePerm <- rep(0,150)
-   .C("fastperm3",as.double(Xt0),as.double(Xt1),as.double(Xt2),
+   .C("fastperm3",as.double(Xt0),as.double(Xt1),as.double(Xt2),as.double(Xtildeperm),
       as.integer(B),as.integer(N),as.double(t.max),as.double(t.min),PACKAGE="flash")
    return(list(t.min,t.max))
  }
