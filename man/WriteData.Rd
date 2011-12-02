@@ -45,14 +45,13 @@ WriteData(mydata, DIR, skip.first = FALSE)
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-      See Also as \code{\link{ReadData}}
-}
+\seealso{\code{\link{ReadData}}}
+
 \examples{ NA
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
-
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{utilities}

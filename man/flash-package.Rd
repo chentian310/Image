@@ -32,10 +32,7 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
 %~~ the R documentation directory ~~
 \keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
+\seealso{\code{\link{ksmooth}}, \code{\link{fft}}}
 \examples{
 ## This part must be written in valid R syntax!
 
