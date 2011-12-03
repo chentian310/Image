@@ -62,11 +62,17 @@ kermat <- sapply(tt,shift,x=kern1)  ## must-have
 
 ## fastperm3.C workable ??
 t.max <- rep(0,50^2); t.min <- rep(0,50^2)
-fastperm3.C(X,t.min,t.max)
+test.C=fastperm3.C(X,t.min,t.max)
+
+test.C.min=test.C[[1]]
+test.C.max=test.C[[2]]
+
+test.R.min=fastperm3.R(X,t.min,t.max)[[1]]
+test.R.max=fastperm3.R(X,t.min,t.max)[[2]]
 
 ## Test the validation of fastperm3.C
 ## should obtain the same result as fastper3.R
-t.max <- rep(0,50^2); t.min <- rep(0,50^2)
+t.max <- rep(0,50^2); t.min <- rep(0,50^2)  # B^2 
 perm.R.min=matrix(0,nrow=100,ncol=2500);perm.R.max=matrix(0,nrow=100,ncol=2500)
 for (i in 1:100) {
   container=fastperm3.R(X,t.min,t.max)
