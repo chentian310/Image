@@ -36,15 +36,15 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 \examples{
 ## This part must be written in valid R syntax!
 
-## generate sample
+## generate sample with flash feature
 N <- 150;  tt<-0:(N-1); flash.region <- floor(N/3):ceiling(2*N/3)
 N.flash <- length(flash.region)
 ff <-rep(0,N);ff[flash.region]<-sin(1:N.flash/N.flash*pi)
 X<-0.3*rnorm(N)+ff
 
 N=length(X);L=3;B<-N/L;ind1<-seq(0,N-1,3)
+#kermat = GaussFilterMat(N)
 
-## A shift function
 shift <- function(x,i=1){
     n<-length(x);i<-i%%n
     if (i==0){
@@ -52,7 +52,6 @@ shift <- function(x,i=1){
        }
     return(x[c((n-i+1):n,1:(n-i))])
   }
-
 ## The Gauss filter
 sigma <- 5.0; cutoff <- min(4*sigma,N-1)
 kern1 <- rep(0,N)
@@ -61,7 +60,7 @@ kern1[(N-cutoff+1):N] <- kern1[(N-cutoff+1):N]+dnorm(-cutoff:-1,sd=sigma)
 kermat <- sapply(tt,shift,x=kern1)  ## must-have
 
 ## fastperm3.C workable ??
-t.max <- rep(0,50^2); t.min <- rep(0,50^2)
+t.max <- rep(0,B^2); t.min <- rep(0,B^2)
 test.C=fastperm3.C(X,t.min,t.max)
 
 test.C.min=test.C[[1]]
@@ -70,14 +69,14 @@ test.C.max=test.C[[2]]
 test.R.min=fastperm3.R(X,t.min,t.max)[[1]]
 test.R.max=fastperm3.R(X,t.min,t.max)[[2]]
 
-## Test the validation of fastperm3.C
-## should obtain the same result as fastper3.R
-t.max <- rep(0,50^2); t.min <- rep(0,50^2)  # B^2 
-perm.R.min=matrix(0,nrow=100,ncol=2500);perm.R.max=matrix(0,nrow=100,ncol=2500)
-for (i in 1:100) {
-  container=fastperm3.R(X,t.min,t.max)
-  perm.R.min[i,]=container[[1]]
-  perm.R.max[i,]=container[[2]]
-}
+range(test.R.min-rev(test.C.min)) # should be 0
+range(test.R.max-rev(test.C.max)) # should be 0
+
+## 
+## Compare the time of 2 approaches
+t.max <- rep(0,B^2); t.min <- rep(0,B^2)  # B^2
+system.time(for(i in 1:100) fastperm3.R(X,t.min,t.max))  # about 6s (5.488)
+system.time(for(i in 1:100) fastperm3.C(X,t.min,t.max))  # about 0.4s(0.398)
+
 
 }
