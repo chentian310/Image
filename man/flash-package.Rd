@@ -59,15 +59,15 @@ kern1[1:(cutoff+1)] <- dnorm(0:cutoff,sd=sigma)
 kern1[(N-cutoff+1):N] <- kern1[(N-cutoff+1):N]+dnorm(-cutoff:-1,sd=sigma)
 kermat <- sapply(tt,shift,x=kern1)  ## must-have
 
-## fastperm3.C workable ??
+## fastperm3.C workable 
 t.max <- rep(0,B^2); t.min <- rep(0,B^2)
-test.C=fastperm3.C(X,t.min,t.max)
+test.C=fastperm3.C(X)
 
 test.C.min=test.C[[1]]
 test.C.max=test.C[[2]]
 
-test.R.min=fastperm3.R(X,t.min,t.max)[[1]]
-test.R.max=fastperm3.R(X,t.min,t.max)[[2]]
+test.R.min=fastperm3.R(X)[[1]]
+test.R.max=fastperm3.R(X)[[2]]
 
 range(test.R.min-rev(test.C.min)) # should be 0
 range(test.R.max-rev(test.C.max)) # should be 0
@@ -75,8 +75,8 @@ range(test.R.max-rev(test.C.max)) # should be 0
 ## 
 ## Compare the time of 2 approaches
 t.max <- rep(0,B^2); t.min <- rep(0,B^2)  # B^2
-system.time(for(i in 1:100) fastperm3.R(X,t.min,t.max))  # about 6s (5.488)
-system.time(for(i in 1:100) fastperm3.C(X,t.min,t.max))  # about 0.4s(0.398)
+system.time(for(i in 1:100) fastperm3.R(X))  # about 5.5s 
+system.time(for(i in 1:100) fastperm3.C(X))  # about 0.4s
 
 
 }
