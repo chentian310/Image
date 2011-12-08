@@ -1,6 +1,7 @@
 ## Only export these objs to the search path for the end user
 ## export(obj1, obj2)
-export(PreProcess,GaussFilterMat,shift, ReadData, WriteData, fastperm3.R, fastperm3.C)
+export(PreProcess, TempSmooth, GaussFilterMat, shift, ReadData, WriteData,
+       fastperm3.R, fastperm3.C, P.adj,rev.rank)
 
 # Refer to all C/Fortran routines by their name prefixed by R_
 useDynLib(flash, .registration = TRUE, .fixes = "R_")

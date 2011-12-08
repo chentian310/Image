@@ -1,8 +1,8 @@
 Package: flash
 Type: Package
 Title: What the package does (short line)
-Version: 0.1.4
-Date: 2011-12-03
+Version: 0.1.5
+Date: 2011-12-06
 Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
