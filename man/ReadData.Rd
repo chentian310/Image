@@ -5,7 +5,8 @@
     Text Files Input
 }
 \description{
-Reads in all text files in a directory and creates a 3-D array from it, with the 3rd dimension corresponding the index.
+Reads in all text files in a directory and creates a 3-D array from it,
+with the 3rd dimension corresponding the time index in the format of "T.time".
 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -19,15 +20,19 @@ ReadData(DIR, skip.first = FALSE)
 %%     ~~Describe \code{DIR} here~~
 }
   \item{skip.first}{
-   logical: if \code{TRUE} then the first text file in the directory would not skipped and not inputed. 
+   logical: if \code{TRUE} then the first text file in the directory
+   would be skipped and not inputted.The default value is \code{FALSE}. 
 %%     ~~Describe \code{skip.first} here~~
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+ Each text file in the \code{DIR} is a intensity matrix for a
+ picture of a cell and the pictures are taken for the same cell in the
+ same time interval. The names of the first and second dimension of the
+ output is not specified, using the index of rows or columns instead. 
 }
 \value{
-%%  ~Describe the value returned
+An 3-D array containing a representation of the data in the directory.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}

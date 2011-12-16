@@ -23,11 +23,12 @@ PreProcess(mydata, default.val = 0, ...)
 }
 }
 \details{
-   \code{mydata} is a 3D array with first 2 dimensions indicating the intensity for each pixel of a picture and the 3rd dimension indicating the time captured the picture. To seperate the back-ground and front-groud, k-means method is applied to do the cluster analysis and then normalize the intensity by doing temporal quantile regression on each pixel and finally use \code{image.smooth} to smooth each picture.  
+   \code{mydata} is a 3D array with first 2 dimensions indicating the
+   intensity for each pixel of a picture and the 3rd dimension indicating the time captured the picture. To separate the back-ground and front-ground, k-means method is applied to do the cluster analysis and then normalize the intensity by doing temporal quantile regression on each pixel and finally use \code{image.smooth} to smooth each picture.  
 }
 \value{
 %%  ~Describe the value returned
-  \item{preproc}{The new \code{mydata} after pre-process}
+  \item{preproc}{3-D array, the spacial smoothed \code{mydata} after pre-process}
   \item{mask}{A logic matrix indicating the background or not. \code{TRUE} denotes background.}
 %% ...
 }

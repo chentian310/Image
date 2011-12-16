@@ -39,7 +39,7 @@ TempSmooth <- function(preproc,mask,bandwidth,method=c("interval",default="circu
       Temp.sm <- array(all.vec,dim=dim(preproc))
       return(list(TempSmooth=Temp.sm,sm.mat=sm.mat))
   }  else  if (method=="circular"){
-      sigma=bandwidth*0.37606506
+      sigma=bandwidth*0.37066506
       kermat <- GaussFilterMat(TimeLen,sigma,cut=4)      
    for (i in 1:mitolen) {
       sm.mat[i,]<-as.vector(kermat%*%pixel.temp[i,])

@@ -96,15 +96,28 @@ P.adj <- function(sm.mat,tmin,tmax){
   for(i in 1:nrow){
     rank.min <- rev.rank(sm.mat[i,],tmin[i,])
     rank.max <- rev.rank(sm.mat[i,],tmax[i,])
-    diff <- p.max-p.min
+    diff <- rank.max-rank.min
     p[i,] <- 2*(rank.min*(diff<0)+rank.max*(diff>0))/ncol
     p.adj[i,]<-p.adjust(p[i,],method="BH")
   }
   return(p.adj)
 }
 
+## TempSmooth: input 3D array with non-mito indicator matrix, gives the smoothed mito
+##             pixel
+## TS.mat: input 2D matrix, smooth each row
 
-
+TS.mat <- function(ymat,bandwidth){
+  if (!is.matrix(ymat)) ymat <- t(as.matrix(ymat))
+      sigma <- bandwidth*0.3706506
+      nrows <- dim(ymat)[1];TimeLen <- dim(ymat)[2]
+      sm.mat <- array(0,dim=c(nrows,TimeLen))
+      kermat <- GaussFilterMat(TimeLen,sigma,cut=4)      
+   for (i in 1:nrows) {
+      sm.mat[i,]<-as.vector(kermat%*%ymat[i,])
+    }
+      return(sm.mat)
+    }
 
 
 

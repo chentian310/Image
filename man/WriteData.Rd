@@ -6,7 +6,7 @@
 Write Data to a Directory
 }
 \description{
-The data (3-d array) \code{mydata} are written to directory \code{DIR} in the form of .txt files (each one consists of  a matrix).The 3rd dimetion indicates the order of .txt files.
+The data (3-d array) \code{mydata} are written to directory \code{DIR} in the form of text files (each one consists of a matrix).The 3rd dimension indicates the order of text files.
 }
 \usage{
 WriteData(mydata, DIR, skip.first = FALSE)
@@ -23,25 +23,25 @@ WriteData(mydata, DIR, skip.first = FALSE)
        logical: if \code{TRUE} then 3-D array \code{mydata} would not write the first matrix into the directory
 }
 }
-\details{ NA
+%\details{ 
 %%  ~~ If necessary, more details than the description above ~~
-}
-\value{ NA
+%}
+%\value{ 
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{ NA
+%}
+%\references{ 
 %% ~put references to the literature/web site here ~
-}
-\author{ NA
+%}
+%\author{ 
 %%  ~~who you are~~
-}
-\note{ NA
+%}
+%\note{ 
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
